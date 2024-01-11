@@ -1,0 +1,281 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- */
+
+
+/* ----- Fuente ----- */
+@import url("https://fonts.googleapis.com/css?family=Merryweather&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+
+/* ----- Variables ----- */
+* {
+	--title-font-family: 'Merryweather', sans-serif;
+	--body-font-family: 'Poppins', sans-serif;
+
+	--body-bg-color: #D2DDF6;
+	--card-bg-color: #F6F9FF;
+	--text-color: #12163C;
+
+	--blue-color-1: #96B3FF;
+	--blue-color-2: #6792FF;
+	--blue-color-3: #4473EA;
+	--blue-color-4: #1A52E1;
+
+	--fs-text: 1rem;
+	--lh-text: 22px;
+}
+
+:root {
+	--pi: 3.14159265359;
+	--a1: 32;
+	--a2: 22;
+	--a3: 30;
+	--a4: 10;
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+body {
+	font-family: var(--body-font-family);
+	background-color: var(--body-bg-color);
+	color: var(--text-color);
+	font-size: var(--fs-text);
+	line-height: var(--lh-text);
+
+	width: 100vw;
+	height: 100vh;
+	overflow: auto;
+}
+
+section {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	background-color: var(--card-bg-color);
+	padding: 70px;
+	border-radius: 40px;
+	width: 750px;
+}
+
+h2 {
+	font-family: var(--title-font-family);
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 0px;
+}
+
+.card__header > p {
+	font-weight: 700;
+}
+
+.card__body {
+	display: flex;
+}
+
+.donut__chart {
+	width: 240px;
+	height: 240px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.donut__chart > p {
+	position: absolute;
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--text-color);
+	text-align: center;
+	line-height: 30px;
+}
+
+.svg__circle {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes percent1 {
+	to {
+	  	stroke-dasharray: calc(2 * var(--pi) * 100 * var(--a1) / 100) calc(2 * var(--pi) * 100 * calc(1 - var(--a1) / 100));
+		stroke-dashoffset: -20;
+	}
+
+}
+
+@keyframes percent2 {
+	to {
+		stroke-dasharray: calc(2 * var(--pi) * 100 * var(--a2) / 100) calc(2 * var(--pi) * 100 * calc(1 - var(--a2) / 100));
+		stroke-dashoffset: -30;
+	}
+}
+
+@keyframes percent3 {
+	to {
+		stroke-dasharray: calc(2 * var(--pi) * 100 * var(--a3) / 100) calc(2 * var(--pi) * 100 * calc(1 - var(--a3) / 100));
+		stroke-dashoffset: -40;
+	}
+}
+
+@keyframes percent4 {
+	to {
+		stroke-dasharray: calc(2 * var(--pi) * 100 * var(--a4) / 100) calc(2 * var(--pi) * 100 * calc(1 - var(--a4) / 100));
+		stroke-dashoffset: -49;
+}
+}
+
+.donut {
+	transform-origin: center center;
+	transition: 0.5s ease-in-out;
+	stroke-dashoffset: 0;
+
+	stroke-width: 18;
+	stroke-linecap: butt;
+}
+
+.donut:nth-child(1) {
+transform: rotateZ(-90deg);
+animation: percent1 1s ease-in-out forwards;
+
+stroke: var(--blue-color-3);
+}
+
+.donut:nth-child(2) {
+transform: rotateZ(calc(-90deg  + calc(var(--a1) * 360deg / 100) ));
+animation: percent2 1s ease-in-out forwards;
+
+stroke: var(--blue-color-2);
+}
+
+.donut:nth-child(3) {
+transform: rotateZ(calc(-90deg  + calc(var(--a1) * 360deg / 100) + calc(var(--a2) * 360deg / 100) ));
+animation: percent3 1s ease-in-out forwards;
+
+stroke: var(--blue-color-4);
+}
+
+.donut:nth-child(4) {
+transform: rotateZ(calc(-90deg  + calc(var(--a1) * 360deg / 100) + calc(var(--a2) * 360deg / 100) + calc(var(--a3) * 360deg / 100)));
+animation: percent4 1s ease-in-out forwards;
+
+stroke: var(--blue-color-1);
+}
+
+.card__body__info {
+	width: 100%;
+	margin-left: 70px;
+}
+
+.svg__info {
+	width: 200px;
+	height: 30px;
+}
+
+.card__body__info > div > p {
+	font-weight: 600;
+}
+
+.card__body__info > div > p:first-child {
+	margin-right: auto;
+}
+
+.card__body__info > div > p:last-child {
+	margin-left: 10px;
+	width: 40px;
+}
+
+.container__info__field {
+	display: flex;
+	margin: 10px 0px;
+}
+
+.container__info__field > p {
+	margin: 0px;
+}
+
+.line__info {
+	stroke-width: 5;
+	stroke-linecap: round;
+}
+
+.container__info__field:nth-child(1) > svg > .line__info {
+	stroke: var(--blue-color-3);
+}
+
+.container__info__field:nth-child(2) > svg > .line__info {
+	stroke: var(--blue-color-4);
+}
+
+.container__info__field:nth-child(3) > svg > .line__info {
+	stroke: var(--blue-color-2);
+}
+
+.container__info__field:nth-child(4) > svg > .line__info {
+	stroke: var(--blue-color-1);
+}
+
+.card__body__options {
+	display: flex;
+	justify-content: end;
+	margin: 20px 0px;
+}
+
+@media screen and (max-width: 991px ) {
+	section {
+		height: auto;
+	}
+
+	.card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 60%;
+		padding: 20px;
+		margin: 20px 0px;
+	}
+
+	h2 {
+		line-height: 35px;
+	}
+
+	.card__body__graphic {
+		display: flex;
+		justify-content: center;
+	}
+	
+	.card__body {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.card__body__info {
+		margin-left: 0px;
+	}
+
+	.container__info__field {
+		display: flex;
+		flex-direction: column;
+	}
+
+	
+	.card__body__info > div > p:last-child {
+		margin-left: auto;
+	}
+
+	.card__body__options {
+		justify-content: start;
+	}
+}

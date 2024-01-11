@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gary Soliz">
+    <meta name="description" content="tarjet analytics">
+    <!-- Biblioteca de íconos Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Archivo reset Normalize -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Analytics</title>
+</head>
+
+<body>
+    <section>
+        <div class="card">
+            <div class="card__header">
+                <h2>Traffic source types</h2>
+                <p>Views · Last 28 days</p>
+            </div>
+            <div class="card__body">
+                <div class="card__body__graphic">
+                    <div class="donut__chart">
+                        <p>Traffic <br/> sources</p>
+                        <svg class="svg__circle" xmlns="http://www.w3.org/2000/svg">
+                            <circle  cx="120" cy="120" class="donut" r="100" stroke-width="25" fill="none"/>
+                            <circle  cx="120" cy="120" class="donut" r="100" stroke-width="25" fill="none"/>
+                            <circle  cx="120" cy="120" class="donut" r="100" stroke-width="25" fill="none"/>
+                            <circle  cx="120" cy="120" class="donut" r="100" stroke-width="25" fill="none"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card__body__info">
+                    <div class="container__info__field">
+                        <p>Channel pages</p>
+                        <svg class="svg__info" xmlns="http://www.w3.org/2000/svg">
+                            <line class="line__info" x1="10" y1="10" x2="197" y2="10" stroke-linecap="butt" />
+                        </svg>
+                        <p>37.5%</p>
+                    </div>
+                    <div class="container__info__field">
+                        <p>Direct or unkown</p>
+                        <svg class="svg__info" xmlns="http://www.w3.org/2000/svg">
+                            <line class="line__info" x1="40" y1="10" x2="197" y2="10" stroke="RoyalBlue" stroke-linecap="butt" />
+                        </svg>
+                        <p>33.6%</p>
+                    </div>
+                    <div class="container__info__field">
+                        <p>Search</p>
+                        <svg class="svg__info" xmlns="http://www.w3.org/2000/svg">
+                            <line class="line__info" x1="100" y1="10" x2="197" y2="10" stroke="RoyalBlue" stroke-linecap="butt" />
+                        </svg>
+                        <p>11%</p>
+                    </div>
+                    <div class="container__info__field">
+                        <p>External</p>
+                        <svg class="svg__info" xmlns="http://www.w3.org/2000/svg">
+                            <line class="line__info" x1="160" y1="10" x2="197" y2="10" stroke="RoyalBlue" stroke-linecap="butt" />
+                        </svg>
+                        <p>6%</p>
+                    </div>
+                    <div class="card__body__options">
+                        <a href="http://www.google.com" target="_blank">See more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

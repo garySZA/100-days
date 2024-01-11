@@ -1,0 +1,134 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ......................... 12
+2. Variables ...................... 16
+3. Estilos generales .............. 27
+-------------------- */
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ----- Variables ----- */
+* {
+	--primary-font-family: 'Poppins', sans-serif;
+	--body-bg-color: #EEF2F9;
+	--btn-bg-color: #4788E9;
+	--text-color: #191847;
+	--white-color: #FFFFFF;
+	--black-color: #000000;
+	--grey-color: hsl(0, 0%, 50%);
+	--font-size: 1rem;
+	--lh-text: 22px;
+}
+
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+body {
+	font-family: var(--primary-font-family);
+	background-color: var(--body-bg-color);
+	color: var(--text-color);
+	font-size: var(--font-size);
+	line-height: var(--lh-text);
+}
+
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.card {
+	background-color: var(--white-color);
+	display: flex;
+	width: 600px;
+	box-shadow: 4px 4px 15px #bdbdbdbd;
+	border-radius: 10px;
+	padding: 60px;
+}
+
+.card__image {
+	margin-right: 15px;
+}
+
+.card__image > img {
+	width: 90%;
+}
+
+.card__content__status {
+	background-color: var(--black-color);
+	color: var(--body-bg-color);
+	border-radius: 25px;
+	padding: 3px 8px;
+}
+
+h2 {
+	font-size: 20px;
+	font-weight: 600;
+}
+
+h3 {
+	font-size: 30px;
+	margin: 12px 0px;
+}
+
+p {
+	color: var(--grey-color);
+	font-size: 12px;
+}
+
+.card__content__button__add{
+	background-color: var(--btn-bg-color);
+	color: var(--white-color);
+	width: 100%;
+	padding: 10px 0px;
+	border-radius: 5px;
+	box-shadow: 0px 5px 0px #1E57EE;
+	margin: 15px 0px;
+	border: none;
+}
+
+.card__content__count {
+	display: flex;
+	vertical-align: center;
+	margin: 10px 0px 20px 0px;
+}
+
+.card__content__count__notificaction {
+	background-color: #09D58E;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	float: inline-start;
+	margin: auto 0px;
+}
+
+span {
+	padding: 0px;
+	margin:  0px 8px;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.card__content__actions {
+	display: flex;
+	justify-content: space-between;
+}
+
+.card__content__actions > button {
+	width: 49%;
+	padding: 10px 0px;
+	background-color: var(--white-color);
+	border: 2px solid #bdbdbdbd;
+	border-radius: 5px;
+	font-size: 13px;
+}
+
+.card__content__actions > button > i {
+	font-size: 15px;
+	margin: 0px 5px;
+}
