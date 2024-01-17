@@ -1,0 +1,153 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+
+/* ----- Variables ----- */
+* {
+    /* Colores primarios */
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+
+    /* Colores neutrales */
+    --very-dark-blue-main-BG: #0d192b;
+    --very-dark-blue-card-BG: hsl(216, 50%, 16%);
+    --very-dark-blue-line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+
+    --outfit-fontfamily: 'Outfit', sans-serif;
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+
+body {
+    font-size: 18px;
+    font-family: var(--outfit-fontfamily);
+
+    background-color: var(--very-dark-blue-main-BG);
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    background-color: var(--very-dark-blue-card-BG);
+    padding: 30px;
+    width: 300px;
+    border-radius: 30px;
+
+    box-shadow: 20px 20px 10px #0D182A;
+}
+
+.card__image {
+    position: relative;
+    transition: .5s ease-in-out;
+}
+
+.container__image > img {
+    width: 100%;
+    border-radius: 10px;
+    transition: .5s ease;
+}
+
+.container__icon__hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(0 255 247 / 20%);
+    opacity: 0;
+    width: 100%;
+    max-height: 300px;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.container__icon__hover > img {
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+}
+
+.card__image:hover .container__icon__hover {
+    opacity: 1;
+}
+
+h2 {
+    color: var(--white);
+    transition: .5s;
+}
+
+
+h2:hover,
+.card__footer > p  > b:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+.card__body > p {
+    color: var(--soft-blue);
+}
+
+.card__body__details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.card__body__details > div {
+    display: flex;
+    width: 40%;
+}
+
+.card__body__details > div:first-child > span {
+    color: var(--cyan);
+    margin-left: 5px;
+}
+
+.card__body__details > div:last-child > span {
+    color: var(--soft-blue);
+    margin-left: 5px;
+}
+
+hr {
+    color: var(--very-dark-blue-line);
+}
+
+.card__footer {
+    display: flex;
+    align-items: center;
+    color: var(--soft-blue);
+}
+
+.card__footer > img {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.card__footer > p  > b {
+    color: var(--white);
+    font-weight: 400;
+    transition: .5s;
+}
