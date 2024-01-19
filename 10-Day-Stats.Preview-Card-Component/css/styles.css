@@ -89,6 +89,7 @@ section {
     font-family: var(--inter-family);
     font-weight: 700;
     padding-right: 20px;
+    margin-top: 0px;
 }
 
 .card__body > h2 > b {
@@ -162,7 +163,6 @@ section {
     .card__body > h2 {
         font-size: 28px;
         padding: 0px 15px;
-        margin-top: 0px;
     }
 
     .card__body > p {

@@ -1,0 +1,129 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+/* ----- Variables ----- */
+* {
+    /* * Colores primarios */
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --very-dark-cyan: hsl(179, 100%, 13%);
+
+    /* * Colores neutrales */
+    --transparent-white-paragraphs: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray-background-headings-buttons: hsl(0, 0%, 95%);
+
+    --lexend-family: 'Lexend Deca', sans-serif;
+    --big-shoulders-family: 'Big Shoulders Display', sans-serif;
+}
+
+body {
+    font-size: 15px;
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.card {
+    display: flex;
+    width: 750px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card > div {
+    padding: 40px;
+}
+
+.card > div > h2 {
+    color: var(--very-light-gray-background-headings-buttons);
+    font-family: var(--big-shoulders-family);
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.card > div > p {
+    color: var(--transparent-white-paragraphs);
+    font-family: var(--lexend-family);
+    font-size: 11px;
+    padding-right: 22px;
+    line-height: 20px;
+    word-spacing: -1px;
+    margin-bottom: 60px;
+}
+
+.card__one {
+    background-color: var(--bright-orange);
+}
+
+.card__two {
+    background-color: var(--dark-cyan);
+}
+
+.card__three {
+    background-color: var(--very-dark-cyan);
+}
+
+.card > div > button {
+    border: 1px solid var(--transparent-white-paragraphs);
+    border-radius: 50px;
+    font-family: var(--lexend-family);
+    font-size: 12px;
+    margin-top: auto;
+    padding: 10px 25px;
+    transition: .4s;
+}
+
+.card > div:first-of-type > button {
+    color: var(--bright-orange);
+}
+
+.card > div:nth-child(2) > button {
+    color: var(--dark-cyan);
+}
+
+.card > div:last-of-type > button {
+    color: var(--very-dark-cyan);
+}
+
+.card > div > button:hover {
+    border: 1px solid var(--transparent-white-paragraphs);
+    background-color: transparent;
+    color: var(--transparent-white-paragraphs);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 991px) {
+    .card {
+        flex-direction: column;
+        width: 80%;
+        margin: 40px 0px;
+    }
+
+    .card > div > p {
+        margin-bottom: 20px;
+    }
+
+    .card > div > button {
+        padding: 10px 20px;
+    }
+}
