@@ -1,0 +1,296 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+/* ----- Variables ----- */
+html {
+    /** Colores primarios */
+    --very-Dark-Magenta: hsl(300, 43%, 22%);
+    --soft-Pink: hsl(333, 80%, 67%);
+
+    /** Colores neutrales */
+    --dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+
+    --league-spartan-family: "League Spartan", sans-serif;
+    --font-size: 15px
+}
+
+body {
+    font-size: var(--font-size);
+    font-family: var(--league-spartan-family);
+
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    grid-template-areas: 
+        "a b"
+        "c c"
+    ;
+    row-gap: 2em;
+
+    background-image: url('../images/bg-pattern-top-desktop.svg'), url('../images/bg-pattern-bottom-desktop.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: right 52vw bottom 30vh, left 5vw top 5vh;
+
+    width: 1000px;
+    padding: 50px;
+}
+
+.card__title {
+    grid-area: a;
+}
+
+.card__title > h2 {
+    color: var(--very-Dark-Magenta);
+    font-weight: 700;
+    font-size: 2.5em;
+    padding-right: 40%;
+    line-height: .8em;
+}
+
+.card__title > p {
+    margin-right: 20%;
+    color: var(--dark-Grayish-Magenta);
+    font-weight: 500;
+}
+
+.card__stars {
+    grid-area: b;
+}
+
+.card__stars > div {
+    background-color: var(--light-Grayish-Magenta);
+    padding: 0px 25px;
+    margin-bottom: 1em;
+    display: flex;
+    width: 68%;
+}
+
+.card__stars > div:nth-child(2) {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card__stars > div:last-child {
+    margin-left: auto;
+}
+
+.card__stars > div > div {
+    display: flex;
+    align-items: center;
+}
+
+.card__stars > div > div > img {
+    width: 17px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.card__stars > div > p {
+    color: var(--very-Dark-Magenta);
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.card__cards {
+    grid-area: c;
+    display: flex;
+    gap: 28px;
+    height: 250px;
+}
+
+.card__cards__container {
+    background-color: var(--very-Dark-Magenta);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 30px 30px;
+
+    height: 150px;
+}
+
+.card__cards__container:nth-child(2) {
+    align-self: center;
+}
+
+.card__cards__container:last-of-type {
+    align-self: flex-end;
+}
+
+.user__info {
+    display: flex;
+}
+
+.user__info > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.user__info > div > h3 {
+    color: var(--white);
+    margin-top: 0px;
+    margin-bottom: 2px;
+}
+
+.user__info > div > small {
+    color: rgba(238, 104, 164, .8);
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.card__cards__container > p {
+    color: var(--light-Grayish-Magenta);
+    font-weight: 400;
+}
+
+@media screen and (max-width: 991px) {
+    .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "a a"
+            "b b"
+            "c c"
+        ;
+        background-image: url('../images/bg-pattern-top-mobile.svg'), url('../images/bg-pattern-bottom-mobile.svg');
+        background-repeat: no-repeat, no-repeat;
+        text-align: center;
+        padding: 60px 30px;
+        
+    }
+
+    .card__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card__title > h2 {
+        padding-right: 0px;
+    }
+    
+    .card__title > p {
+        margin-right: 0px;
+    }
+    
+    .card__stars > div {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+    .card__title > h2,
+    .card__title > p {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 820px) {
+    .card__title > h2,
+    .card__title > p {
+        width: 60%;
+    }
+    
+    .card__stars {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .card__stars > div {
+        width: 80%;
+    }
+
+    .card__cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .card__cards__container {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: visible;
+    }
+
+    .card__cards__container:last-of-type {
+        align-self: center;
+    }
+
+    .card__cards__container > p {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .card__title {
+        grid-area: a;
+    }
+
+    .card__stars {
+        grid-area: b;
+    }
+
+    .card__stars > div {
+        width: 100%;
+        padding: 15px 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card__stars > div > p {
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
+
+    .card__stars > div > div > img:last-of-type {
+        margin-right: 0px;
+    } 
+
+    .card__cards {
+        flex-direction: column;
+        height: auto;
+        gap: 28px;
+    }
+
+    .card__cards__container {
+        padding: 40px 30px;
+        height: auto;
+    }
+
+    .card__cards__container > p {
+        text-align: left;
+        margin-bottom: 0px;
+    }
+}
