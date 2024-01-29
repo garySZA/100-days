@@ -50,6 +50,8 @@ section {
     background-color: var(--dark-Grey);
     text-align: center;
     padding: 40px;
+
+    border-radius: 10px;
 }
 
 .card > img {
@@ -110,3 +112,13 @@ li:hover {
 li:hover a {
     color: var(--dark-Grey);
 } 
+
+@media screen and (max-width: 376px) {
+    .card {
+        max-width: 90%;
+    }
+
+    li {
+        padding: 10px 0;
+    }
+}
