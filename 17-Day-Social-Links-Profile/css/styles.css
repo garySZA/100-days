@@ -1,0 +1,112 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+    /** Colores primarios */
+    --green: hsl(75, 94%, 57%);
+
+    /** Colores neutrales */
+    --white: hsl(0, 0%, 100%);
+    --grey: hsl(0, 0%, 20%);
+    --dark-Grey: hsl(0, 0%, 12%);
+    --off-Black: hsl(0, 0%, 8%);
+    --font--grey: #A8A8A8;
+
+    /*? Font  */
+    --inter-font-family: "Inter", sans-serif;
+    --font-size: 14px
+}
+
+body {
+    font-family: var(--inter-font-family);
+    font-size: var(--font-size);
+
+    background-color: var(--off-Black);
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: var(--dark-Grey);
+    text-align: center;
+    padding: 40px;
+}
+
+.card > img {
+    border-radius: 50%;
+    width: 80px;
+}
+
+.card > h2 {
+    color: var(--white);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.card > small {
+    color: var(--green);
+    font-weight: 600;
+    user-select: none;
+}
+
+.card > p {
+    color: #A8A8A8;
+    font-weight: 400;
+    margin: 25px 0px;
+    user-select: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+li {
+    background-color: var(--grey);
+    padding: 10px 90px;
+    border-radius: 8px;
+
+    transition: background-color .4s;
+}
+
+li:nth-child(2n) {
+    margin: 15px 0px;
+}
+
+li > a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    
+    transition: color .4s;
+}
+
+li:hover {
+    background-color: var(--green);
+    cursor: pointer;
+}
+
+li:hover a {
+    color: var(--dark-Grey);
+} 
