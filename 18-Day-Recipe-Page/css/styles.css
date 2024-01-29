@@ -71,6 +71,7 @@ section {
 h2 {
     font-size: 2.4em;
     margin-bottom: 0px;
+    color: var(--dark-Charcoal);
 }
 
 .card > p {
@@ -188,7 +189,7 @@ th {
 tr > th:last-of-type,
 tr > td:last-of-type {
     color: var(--nutmeg);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 @media screen and (max-width: 576px) {
@@ -202,7 +203,7 @@ tr > td:last-of-type {
     }
 
     .card > img {
-        width: 100vh;
+        width: 100vw;
         position: absolute;
         top: 0;
         left: 0;
@@ -210,6 +211,26 @@ tr > td:last-of-type {
     }
 
     .card > h2 {
-        margin-top: 9em;
+        margin-top: 4.5em;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .card > h2 {
+        font-size: 2.2em;
+        margin-top: 5em;
+    }
+
+    .card > p {
+        padding-right: 0px;
+        font-size: .97em;
+    }
+
+    .card__ingredients > ul > li {
+        line-height: 1.5em;
+    }
+
+    .card__ingredients > ul > li:nth-child(2n){
+        margin: 5px 0px;
     }
 }
