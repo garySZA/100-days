@@ -100,7 +100,6 @@ i {
     cursor: pointer;
     background-color: var(--soft-Magenta);
     color: var(--white);
-    text-decoration: underline;
 }
 
 .social__medias {
@@ -199,4 +198,26 @@ i:hover {
         padding: 12px 75px;
     }
 
+}
+
+@media screen and (max-width: 376px) {
+    section {
+        padding: 0px 40px;
+    }
+
+    .content {
+        margin-bottom: 4em;
+    }
+
+    .content__text > h2 {
+        font-size: 1.6em;
+    }
+
+    .content__text > p {
+        font-size: .96em;
+    }
+
+    .social__medias {
+        margin-bottom: 1.5em;
+    }
 }
