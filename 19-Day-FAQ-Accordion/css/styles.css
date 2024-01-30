@@ -1,0 +1,164 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+    /** Colores */
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+
+    /** Colores neutrales */
+    --grey: #A8A8A8;
+
+    /*! Font  */
+    --work-sans-family: "Work Sans", sans-serif;
+    --font-size: 16px;
+}
+
+body {
+    font-family: var(--work-sans-family);
+    font-size: var(--font-size);
+    background-color: var(--light-pink);
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+section {
+    position: relative;
+    min-height: 100vh;
+}
+
+.banner {
+    background-image: url('../images/background-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 520px;
+    position: absolute;
+    top: 13em;
+    background-color: var(--white);
+    border-radius: 10px;
+
+    box-shadow: 0px 30px 10px #e2d0ec51;
+    padding: 30px;
+}
+
+.card__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card__header > h2 {
+    margin: 0px;
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 3.5em;
+}
+
+.accordion {
+    background-color:  var(--white);
+    color: var(--dark-purple);
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 700;
+    font-size: 1.11em;
+
+    transition: .4s;
+}
+
+.accordion:hover,
+.active {
+    color: #AD28EB;
+}
+
+.accordion:after {
+    content: url('../images/icon-plus.svg');
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+    padding: 15px 0px;
+}
+
+.active:after {
+    content: url('../images/icon-minus.svg');
+}
+
+.panel {
+    color: var(--grayish-purple);
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height .4s ease-out;
+}
+
+.panel > p {
+    line-height: 25px;
+    
+}
+
+hr {
+    border: 0;
+    background-color: var(--grey);
+    color: var(--grey);
+    opacity: .3;
+    height: 1px;
+}
+
+@media screen and ( max-width: 991px ) {
+    body {
+        padding-bottom: 10em;
+    }
+
+    .banner {
+        background-image: url('../images/background-pattern-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+}
+
+@media screen and (max-width: 576px) {
+    
+    .banner {
+        width: 100vw;
+        height: 300px;
+    }
+
+    .card {
+        width: 75vw;
+        padding: 30px;
+        top: 10.5em;
+        margin-bottom: 10em;
+    }
+}
