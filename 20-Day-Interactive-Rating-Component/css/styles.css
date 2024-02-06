@@ -1,0 +1,242 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+    /** Colores primarios */
+    --orange: hsl(25, 97%, 53%);
+
+    /** Colores neutrales */
+    --white: hsl(0, 0%, 100%);
+    --light-Grey: hsl(217, 12%, 63%);
+    --medium-Grey: hsl(216, 12%, 54%);
+    --dark-Blue: #252d37;
+    --medium-blue: hsl(210, 27%, 13%);
+    --very-Dark-Blue: hsl(216, 12%, 8%);
+
+    /** Font */
+    --overpass-family: "Overpass", sans-serif;
+    --font-size: 15px;
+}
+
+body {
+    font-family: var(--overpass-family);
+    font-size: var(--font-size);
+
+    background-color: var(--very-Dark-Blue);
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    background-color: var(--medium-blue);
+    width: 350px;
+    padding: 30px;
+    border-radius: 30px;
+
+    /* display: none; */
+}
+
+.card__header {
+    background-color: var(--dark-Blue);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card__header > img {
+    width: 17px;
+    height: 16px;
+}
+
+.card__body > h2 {
+    color: var(--white);
+    font-size: 27px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+.card__body > p:first-of-type {
+    color: var(--medium-Grey);
+    line-height: 25px;
+    margin: 0px;
+}
+
+.card__body__options {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px;
+}
+
+.card__body__options > div {
+    color: var(--medium-Grey);
+    background-color: var(--dark-Blue);
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card__body__options > div,
+.card__body > button {
+    transition: background-color .4s, color .4s;
+}
+
+.card__body__options > div:hover {
+    background-color: var(--orange);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.card__body__options > div > small {
+    font-weight: 700;
+    font-size: 15px;
+    user-select: none;
+
+}
+
+.selected {
+    background-color: var(--medium-Grey) !important;
+    color: var(--white) !important;
+}
+
+.selected small {
+    color: var(--white);
+}
+
+.selected:hover {
+    cursor: not-allowed !important;
+}
+
+.card__body > button {
+    background-color: var(--orange);
+    border: none;
+    color: var(--white);
+    width: 100%;
+    border-radius: 20px;
+    padding: 13px 0px;
+}
+
+.card__body > button:hover {
+    background-color: var(--white);
+    color: var(--orange);
+    cursor: pointer;
+}
+
+.error__message {
+    margin: 0px;
+    color: var(--orange);
+    font-size: 12px;
+    margin-bottom: 5px;
+
+    transition: all .4s
+}
+
+/** Styles Card Two  */
+
+.card-two {
+    display: none;
+}
+
+.card__two__active {
+    background-color: var(--medium-blue);
+    width: 340px;
+    padding: 40px;
+    border-radius: 30px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card__two__active > small {
+    background-color: var(--dark-Blue);
+    color: orange;
+
+    padding: 5px 15px;
+    border-radius: 20px;
+
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+.card__two__active > h3 {
+    color: var(--white);
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.card__two__active > p {
+    text-align: center;
+    color: var(--medium-Grey);
+    margin: 0px;
+
+    line-height: 22px;
+}
+
+@media screen and ( max-width: 375px ) {    
+    .card {
+        border-radius: 20px;
+    }
+
+    .card__body > h2 {
+        font-size: 20px;
+        margin-top: 25px;
+    }
+
+    .card__body > p:first-of-type {
+        font-size: 12px;
+    }
+
+    .card__body__options > div {
+        width: 40px;
+        height: 40px;
+    }
+
+    .card__body__options {
+        margin: 25px 0px;
+    }
+
+    .card__two__active {
+        padding: 30px 20px;
+    }
+
+    .card__two__active > p {
+        font-size: 12px;
+    }
+}
+
+@media screen and ( max-width: 991px ) {
+    section {
+        padding: 0px 10vw;
+    }
+}

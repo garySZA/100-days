@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nombre del autor">
+    <meta name="description" content="Descripcion del proyecto">
+    <!-- Biblioteca de íconos Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Archivo reset Normalize -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <title>Interactive Rating Component</title>
+</head>
+
+<body>
+
+    <!-- Marcado HTML -->
+    <section>
+        <div class="card">
+            <div class="card__header">
+                <img src="./images/icon-star.svg" alt="star icon">
+            </div>
+            <div class="card__body">
+                <h2>How did we do?</h2>
+                <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+                <div class="card__body__options">
+                    <div class="option">
+                        <small>1</small>
+                    </div>
+                    <div class="option">
+                        <small>2</small>
+                    </div>
+                    <div class="option">
+                        <small>3</small>
+                    </div>
+                    <div class="option">
+                        <small>4</small>
+                    </div>
+                    <div class="option">
+                        <small>5</small>
+                    </div>
+                </div>
+                <p class="error__message"></p>
+                <button id="submit">SUBMIT</button>
+            </div>
+        </div>
+        <div class="card-two" id="card__two">
+            <div class="card-two__header">
+                <img src="./images/illustration-thank-you.svg" alt="thank you ilustration">
+            </div>
+            <small id="result"></small>
+            <h3>Thank you!</h3>
+            <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
+        </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
