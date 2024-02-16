@@ -1,0 +1,258 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+    /** Colores primarios */
+    --desaturated-Red: hsl(0, 36%, 70%);
+    --soft-Red: hsl(0, 93%, 68%);
+
+    /** Colores neutrales */
+    --dark-Grayish-Red: hsl(0, 6%, 24%);
+
+    /** Colores gradientes */
+    /*!  */
+    /* --linear 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+    - Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+
+    /**  */
+    --font: "Josefin Sans", sans-serif;
+    --font-size: 16px;
+}
+
+body {
+    font-family: var(--font);
+    font-size: var(--font-size);
+
+    background-image: url('../images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+
+section {
+    display: grid;
+    grid-template-areas: 
+        "a a b"
+        "c c b"
+        "c c b"
+        "c c b"
+    ;
+}
+
+.image {
+    background-image: url('../images/hero-desktop.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    width: 485px;
+    height: 100vh;
+}
+
+.header {
+    padding: 70px 140px 0px 140px;
+    grid-area: a;
+}
+
+.image {
+    grid-area: b;
+}
+
+.content {
+    grid-area: c;
+
+    padding: 0px 140px;
+}
+
+.content > h2 {
+    font-size: 2.8em;
+    margin: 0px;
+    text-transform: uppercase;
+    color: var(--desaturated-Red);
+    font-weight: 300;
+
+    letter-spacing: 10px;
+    margin-top: 1em;
+}
+
+.content > h2 > b {
+    color: var(--dark-Grayish-Red);
+    font-weight: 600;
+
+}
+
+.content > p {
+    color: var(--desaturated-Red);
+    line-height: 28px;
+
+    margin-bottom: 3em;
+}
+
+.content > form > div {
+    border: 1px solid var(--desaturated-Red);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+}
+
+input {
+    border: none;
+    background-color: transparent;
+    color: var(--dark-Grayish-Red);
+    width: 80%;
+
+    text-indent: 25px;
+    outline: none;
+}
+
+::placeholder {
+    color: var(--desaturated-Red);
+}
+
+.content > form > div > img {
+    display: none;
+    margin: auto 20px;
+}
+
+button {
+    border: none;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    border-radius: 50px;
+    box-shadow: 0px 20px 20px #F7D9DB;
+
+    padding: 10px 35px;
+    transition: background .4s;
+}
+
+button:hover {
+    cursor: pointer;
+
+    background: linear-gradient(135deg, hsla(0, 80%, 86%, 0.818), hsla(0, 80%, 86%, 0.818));
+    box-shadow: 0px 10px 20px 5px #F7D9DB;
+}
+
+.content > form > small {
+    display: block;
+    padding-left: 25px;
+    color: var(--soft-Red);
+}
+
+.message__success {
+    color: green !important;
+}
+
+@media screen and ( max-width: 991px ) {
+    .header {
+        padding: 20px 80px;
+    }
+
+    .image {
+        background-size: cover;
+        
+        width: 40vw;
+        height: 100vh;
+    }
+
+    .content {
+        padding: 20px 80px 20px 80px;
+    }
+
+    .content > h2 {
+        margin-top: 20px;
+    }
+}
+
+@media screen and ( max-width: 695px ) {
+    section {
+        display: grid;
+        grid-template-areas: 
+            "a a a"
+            "b b b"
+            "c c c"
+        ;
+    }
+
+    .header {
+        padding: 20px 80px;
+    }
+
+    .image {
+        background-image: url('../images/hero-mobile.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+        width: 100vw;
+        height: 70vh;
+    }
+
+    .content {
+        padding: 80px 80px 60px 80px;
+    }
+
+    .content > h2 {
+        margin-top: 10px;
+    }
+}
+
+@media screen and ( max-width: 417px ) {
+    .header {
+        padding: 20px 60px;
+    }
+
+    .content {
+        padding: 80px 60px 60px 60px;
+        text-align: center;
+    }
+
+    .content > h2 {
+        margin-top: 10px;
+    }
+
+    .content > form > small {
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    .header {
+        padding: 40px;
+        grid-area: a;
+    }
+
+    .image {
+
+        width: 100vw;
+        height: 250px;
+    }
+
+    .content {
+        grid-area: c;
+    
+        padding: 20px 40px 80px 40px;
+    }
+
+    .content > h2 {
+        font-size: 40px;
+    }
+
+    .content > p {
+        font-size: 13.5px;
+    }
+}
