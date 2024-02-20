@@ -1,0 +1,253 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+    /** Colores primarios */
+    --red: hsl(0, 100%, 74%) ;
+    --green: hsl(154, 59%, 51%);
+    --white: #ffffff;
+
+    /** Accent */
+    --blue: hsl(248, 32%, 49%);
+
+    /** Colores neutrales */
+    --dark-Blue: hsl(249, 10%, 26%);
+    --grayish-Blue: hsl(246, 25%, 77%);
+
+    --poppins-font: "Poppins", sans-serif;
+    --font-size: 16px;
+
+}
+
+body {
+    font-family: var(--poppins-font);
+    font-size: var(--font-size);
+
+    background-color: var(--red);
+    background-image: url('../images/bg-intro-desktop.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+
+section {
+    padding: 5em 7.5em;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    
+}
+
+.container__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container__text > h2 {
+    font-size: 2.7em;
+    margin-bottom: 20px;
+}
+
+.container__text > p,
+.container__text > h2,
+.container__form > p,
+form > button {
+    color: var(--white);
+}
+
+.container__text > p {
+    font-weight: 400;
+    line-height: 25px;
+    font-size: .9em;
+    
+}
+
+.container__form > p {
+    background-color: var(--blue);
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+
+    box-shadow: 0 6px 1px hsla(248 ,32%, 49% , .3);
+}
+
+form {
+    background-color: var(--white);
+    padding: 2em;
+    border-radius: 10px;
+    
+    box-shadow: 0 6px 1px hsla(249 ,10%, 26% , .3);
+}
+
+.container__input {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid var(--grayish-Blue);
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 10px 25px;
+}
+
+.container__input__error {
+    border: 2px solid var(--red);
+}
+
+.container__input > img {
+    opacity: 0;
+    margin: auto 0;
+}
+
+.container__input:nth-child(2n) > input {
+    margin: 20px 0;
+}
+
+.container__input > input {
+    border: none;
+    font-weight: 600;
+    width: 95%;
+}
+
+.input__error::placeholder,
+.input__error {
+    color: var(--red) !important;
+}
+
+.container__input > input:focus {
+    outline: none;
+}
+
+.container__input:focus-within {
+    border: 1px solid var(--dark-Blue);
+}
+
+.error__message {
+    color: var(--red);
+    text-align: end;
+    margin: 5px 0px 10px 0px;
+    font-size: .6em;
+    opacity: 0;
+}
+
+form > button {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: var(--green);
+    text-transform: uppercase;
+    border-radius: 5px;
+
+    padding: 15px 0;
+
+    box-shadow: 0 6px 1px #57AE8B;
+}
+
+form > button:hover {
+    cursor: pointer;
+
+    background-color:#76E2B4;
+}
+
+form > small {
+    display: block;
+    text-align: center;
+    margin: 15px 0px;
+
+    font-size: .6em;
+    color: hsla(249 ,10%, 26% , .5);
+}
+
+form > small > a {
+    color: var(--red);
+    text-decoration: none;
+} 
+
+.success {
+    color: green;
+    font-size: .8em;
+}
+
+@media ( width > 1200px ){
+    section {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}
+
+@media (width <= 820px ){
+    section {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (width <= 577px ){
+    section {
+        padding: 3em 10vw;
+    }
+
+    .container__text > h2 {
+        margin-top: 0;
+    }
+
+    .container__text > h2,
+    .container__text > p {
+        text-align: center;
+    }
+}
+
+@media (width <= 376px ){
+    section {
+        padding: 4em 10vw;
+    }
+
+    
+    .container__text > p {
+        font-size: .95em;
+    }
+
+    .container__form > p {
+        padding: 20px 50px;
+        line-height: 28px;
+        margin-bottom: 25px;
+    }
+
+    .container__input {
+        padding: 10px 20px;
+    }
+
+    .container__input > input {
+        font-size: .8em;
+    }
+
+    .error__message {
+        margin: 3px 8px;
+    }
+
+    form > button {
+        font-size: .9em;
+        margin-top: 10px;
+        padding: 18px 0;
+    }
+
+    form > small:last-child {
+        padding: 0 5%;
+        line-height: 20px;
+    }
+}
