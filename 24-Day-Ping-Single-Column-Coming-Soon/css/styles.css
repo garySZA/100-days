@@ -1,0 +1,252 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+    /** Primarios */
+    --blue: hsl(223, 87%, 63%);
+
+    /** Secundarios */
+    --pale-Blue: hsl(223, 100%, 88%);
+    --light-Red: hsl(354, 100%, 66%);
+
+    /** Neutrales */
+    --gray: hsl(0, 0%, 59%);
+    --very-Dark-Blue: hsl(209, 33%, 12%);
+
+    /** Font  */
+    --franklin-family: "Libre Franklin", sans-serif;
+    --font-size: 20px
+}
+
+body {
+    font-family: var(--franklin-family);
+    font-size: var(--font-size);
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em 25vw;
+}
+
+section > h2 {
+    font-weight: 300;
+    font-size: 2.4em;
+    color: var(--gray);
+    margin-bottom: 0;
+}
+
+section > h2 > b {
+    font-weight: 700;
+    color: var(--very-Dark-Blue);
+}
+
+section > p {
+    color: var(--very-Dark-Blue);
+    margin-bottom: 2em;
+}
+
+.form__container {
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+
+#form {
+    display: flex;
+    justify-content: space-between;
+}
+
+#form > div > input,
+#form > button {
+    border-radius: 50px;
+}
+
+.field__container {
+    width: 70%;
+}
+
+#form > div > input {
+    display: block;
+    width: 100%;
+    color: var(--very-Dark-Blue);
+    border: 1px solid hsla(223, 87%, 63%, .3);
+    padding: 15px 0;
+    text-indent: 25px;
+    font-size: .8em;
+}
+
+input:placeholder {
+    color: var(--gray);
+}
+
+input:focus {
+    outline: none;
+}
+
+.error__message {
+    opacity: 0;
+    padding-left: 25px;
+    color: var(--light-Red);
+    font-size: .6em;
+    font-style: italic;
+}
+
+.field__error {
+    border: 1px solid var(--light-Red) !important;
+}
+
+#form > button {
+    background-color: var(--blue);
+    font-size: .8em;
+    color: var(--pale-Blue);
+    font-weight: 700;
+    padding: 15px 60px;
+    border: none;
+    margin: 0 0 auto 0;
+
+    box-shadow: 0px 5px 10px hsla(223, 87%, 63%, .4);
+
+    transition: background-color .4s;
+}
+
+#form > button:hover {
+    background-color: hsla(223, 87%, 63%, .8);
+    cursor: pointer;
+}
+
+#success {
+    opacity: 0;
+    padding-left: 25px;
+    color: green;
+    font-size: .6em;
+}
+
+section > img {
+    width: 100%;
+    margin-bottom: 3em;
+}
+
+section > small {
+    color: var(--gray);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    width: 30px;
+    height: 30px;
+    float: left;
+    border-radius: 50%;
+    border: 1px solid hsla(223, 87%, 63%, .1);
+    margin-bottom: 1em;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li:nth-child(2) {
+    margin: 0px 20px;
+}
+
+a {
+    color: var(--blue);
+    font-size: .8em;
+}
+
+@media ( width > 1200px ){
+    section {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}
+
+@media ( 992px <= width < 1200px ) {
+    #form > div {
+        width: 60%;
+    }
+
+    #form > div > button {
+        margin-left: 15px;
+    }
+}
+
+@media ( width <= 991px ){
+    section > h2,
+    section > p {
+        text-align: center;
+    }
+
+    #form {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .field__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .error__message {
+        display: block;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        padding: 0;
+    }
+
+    section > img {
+        margin-bottom: 3em;
+    }
+}
+
+@media ( width <= 768px ){
+    section {
+        padding: 3em 10vw;
+    }
+}
+
+@media ( width <= 576px ){
+    section > h2 {
+        font-size: 1.3em;
+        margin-top: 2em;
+        margin-bottom: .5em;
+    }
+    
+    section > p,
+    .field__container > input {
+        font-size: .7em;
+    }
+
+    #form > button {
+        font-size: .7em;
+    }
+}
+
+@media ( width <= 375px ){
+
+    section > small {
+        font-size: .6em;
+    }
+}
