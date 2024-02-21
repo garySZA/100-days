@@ -67,7 +67,7 @@ section {
 
 .container__text > p,
 .container__text > h2,
-.container__form > p,
+.container__form > button,
 form > button {
     color: var(--white);
 }
@@ -79,10 +79,15 @@ form > button {
     
 }
 
-.container__form > p {
+.container__form > button {
+    width: 100%;
+    margin-bottom: 20px;
+    cursor: pointer;
+
     background-color: var(--blue);
     text-align: center;
     padding: 20px;
+    border: none;
     border-radius: 10px;
 
     box-shadow: 0 6px 1px hsla(248 ,32%, 49% , .3);
@@ -214,16 +219,20 @@ form > small > a {
 
 @media (width <= 376px ){
     section {
-        padding: 4em 10vw;
+        padding: 4em 6vw;
     }
 
-    
+    .container__text > h2 {
+        font-size: 2em;
+    }
+
+
     .container__text > p {
-        font-size: .95em;
+        font-size: 1em;
     }
 
-    .container__form > p {
-        padding: 20px 50px;
+    .container__form > button {
+        padding: 20px 60px;
         line-height: 28px;
         margin-bottom: 25px;
     }
@@ -240,6 +249,10 @@ form > small > a {
         margin: 3px 8px;
     }
 
+    form {
+        padding: 1.5em;
+    }
+
     form > button {
         font-size: .9em;
         margin-top: 10px;
@@ -249,5 +262,6 @@ form > small > a {
     form > small:last-child {
         padding: 0 5%;
         line-height: 20px;
+        margin-bottom: 0;
     }
 }
