@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if( !emailRegex.test( email.value ) ){
-            console.log('aqui')
             error__message[0].style.display = "block";
             error__message[0].style.opacity = "1";
             error__message[0].innerHTML = "Please provide a valid email address";
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             form.reset();
             hiddeMessageSuccess();
-
         }
     }
 
