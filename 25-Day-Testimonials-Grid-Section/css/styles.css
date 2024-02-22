@@ -1,0 +1,255 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+    /** Primarios */
+    --moderate-violet: hsl(263, 55%, 52%)   ;
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+
+    /** Neutrales */
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+
+    /** Font */
+    --barlow-family: "Barlow Semi Condensed", sans-serif;
+    --font-size: 13px;
+}
+
+body {
+    font-family: var(--barlow-family);
+    font-size: var(--font-size);
+    background-color: var(--light-grayish-blue);
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}
+
+.container {
+    width: 1080px;
+
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "a a b e"
+        "c d d e"
+    ;
+
+    place-content: center;
+}
+
+.container > div {
+    border-radius: 10px;
+    padding: 2.2em;
+
+    box-shadow: 45px 30px 30px #D4DAE2;
+}
+
+.container > div:last-child {
+    box-shadow: 15px 40px 40px #D4DAE2;
+}
+
+.card__one {
+    grid-area: a;
+
+    background-color: var(--moderate-violet);
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: top right 18%;
+}
+
+.card__two {
+    grid-area: b;
+
+    background-color: var(--very-dark-grayish-blue);
+}
+
+.card__three {
+    grid-area: c;
+
+    background-color: var(--white);
+}
+
+.card__four {
+    grid-area: d;
+
+    background-color: var(--very-dark-blackish-blue);
+}
+
+.card__five {
+    grid-area: e;
+
+    background-color: var(--white);
+}
+
+.container > div:not(:nth-child(3),  :nth-child(5)) > h2,
+.container > div:not(:nth-child(3),  :nth-child(5)) > div > div > h3 {
+    color: var(--white);
+}
+
+.container > div:not(:nth-child(3),  :nth-child(5)) > p {
+    color: hsla(0, 0%, 100%, .7);
+}
+
+.container > div:not(:nth-child(3),  :nth-child(5)) > div > div > small {
+    color: hsla(0, 0%, 100%, .5);
+}
+
+.container > div:nth-child(odd):not(:first-child) > h2, 
+.container > div:nth-child(odd):not(:first-child) > div > div > h3 {
+    color: var(--very-dark-grayish-blue);
+}
+
+.container > div:nth-child(odd):not(:first-child) > p {
+    color: hsla(217, 19%, 35%, .7);
+}
+
+.container > div:nth-child(odd):not(:first-child) > div > div > small {
+    color: hsla(217, 19%, 35%, .5);
+}
+
+.container > div > h2 {
+    font-size: 1.53em;
+}
+
+.container > div > p {
+    font-size: 1.005em;
+    margin-bottom: 0;
+
+    line-height: 19px;
+}
+
+.container__user__info {
+    display: flex;
+    column-gap: 15px;
+}
+
+.container__user__info > img {
+    margin: auto 0;
+    border-radius: 50%;
+
+    width: 30px;
+    height: 30px;
+}
+
+.card__one > .container__user__info > img {
+    border: 1px solid 	hsl(280, 100%, 90%);
+}
+
+.card__four > .container__user__info > img {
+    border: 2px solid var(--moderate-violet);
+}
+
+.info > h3 {
+    margin: 0;
+    font-weight: 500;
+
+    font-size: .95em;
+}
+
+.info > small {
+    font-size: .8em;
+}
+
+@media ( 992px <= width <= 1100px ) {
+    section {
+        padding: 3em 7vh;
+    }
+}
+
+@media ( width < 992px ){
+    section {
+        padding: 5em 7vw;
+    }
+
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "a a b"
+            "c d d"
+            "e e e"
+        ;
+    }
+}
+
+@media ( width < 768px ){
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "a a"
+            "b d"
+            "c d"
+            "e e"
+        ;
+    }
+}
+
+@media ( width < 576px ){
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "a a"
+            "b c"
+            "d d"
+            "e e"
+        ;
+    }
+}
+
+@media ( width < 500px ){
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "a"
+            "b"
+            "c"
+            "d"
+            "e"
+        ;
+    }
+}
+
+@media ( width <= 375px ) {
+    section {
+        padding: 6em 7vw;
+    }
+    
+    .container > div {
+        padding: 2.5em;
+    }    
+
+    .card__one {
+        grid-area: a;
+        background-position: top right 12%;
+    }
+
+    .container > div > h2 {
+        font-size: 1.510em;
+    }
+
+    .container > div > p {
+        font-size: 1.04em;
+    }
+}
