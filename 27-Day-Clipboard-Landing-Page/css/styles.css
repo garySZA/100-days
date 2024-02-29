@@ -1,0 +1,579 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+    /** Colores primarios */
+    --strong-Cyan: hsl(171, 66%, 44%);
+    --light-Blue: hsl(233, 100%, 69%);
+    --white: #fff;
+
+    /** Colores neutrales */
+    --dark-Grayish-Blue: hsl(210, 10%, 33%);
+    --grayish-Blue: hsl(201, 11%, 66%);
+
+    --font: "Bai Jamjuree", sans-serif;
+    --size: 18px
+}
+
+body {
+    font-family: var(--font);
+    font-size: var(--size);
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+/*? Transitions  */
+header button,
+.section__download__options button {
+    transition: background-color .4s;
+}
+
+a {
+    transition: color .4s;
+}
+
+/*? Cursos  */
+header button,
+.section__download__options button {
+    cursor: pointer;
+}
+
+/*? Center - Row*/
+section,
+.container__card,
+.card > div,
+footer {
+    display: flex;
+}
+
+/*? Center - Column */
+#section__snippets,
+#section__devices,
+#section__cards,
+#section__download {
+    flex-direction: column;
+}
+
+/*? Text center */
+#section__snippets,
+#section__devices,
+.card,
+#section__download {
+    text-align: center;
+}
+
+/*? Colors  */
+header > p,
+#section__snippets > p,
+.section__banner__content > div > p,
+#section__devices,
+#section__cards p,
+#section__download > p {
+    color: var(--grayish-Blue);
+}
+
+header > h2,
+#section__snippets > h3,
+.section__banner__content > div > h3,
+#section__devices > h2,
+#section__cards h2 h3,
+#section__download > h2 {
+    color: var(--dark-Grayish-Blue);
+}
+
+/*? Line height  */
+header > p,
+#section__snippets > p,
+#section__download > p,
+#section__devices > p {
+    line-height: 30px;
+}
+
+/*? Margin bottom 0  */
+.section__banner__content > div > h3,
+#section__devices > h2, 
+#section__cards > h2,
+#section__download > h2 {
+    margin-bottom: 0;
+}
+
+header,
+section,
+footer {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    background-image: url('../images/bg-header-desktop.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding:5em 24vw;
+    margin-bottom: 3em;
+    
+    text-align: center;
+}
+
+header > h2 {
+    font-size: 2.2em;
+    margin-bottom: 0;
+}
+
+header > p {
+    margin-bottom: 40px;
+}
+
+header button,
+.section__download__options > button {
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    color: var(--white)
+}
+
+header button:first-of-type,
+.section__download__options > button:first-child {
+    background-color: var(--strong-Cyan);
+    margin-right: 10px;
+
+    box-shadow: 0 5px 20px hsla(171, 66%, 44%, .4);
+}
+
+header button:first-of-type:hover,
+.section__download__options > button:first-child:hover {
+    background-color: hsla(171, 66%, 44%, .7);
+}
+
+header button:last-of-type,
+.section__download__options > button:last-child {
+    background-color: var(--light-Blue);
+
+    box-shadow: 0 5px 20px hsla(233, 100%, 69%, .4);;
+}
+
+header button:last-of-type:hover,
+.section__download__options > button:hover {
+    background-color: hsla(233, 100%, 69%, .7);
+}
+
+#section__snippets {
+    padding: 0 21vw;
+    margin-bottom: 3em;
+}
+
+#section__snippets > h3 {
+    font-size: 1.7em;
+    margin-bottom: 0;
+}
+
+#section__banner {
+    column-gap: 30px;
+}
+
+#section__banner > div:first-child {
+    width: 55vw;
+}
+
+#section__banner > div:last-child {
+    width: 45vw;
+    
+}
+
+.banner > img {
+    width: 100%;
+    translate: -30px;
+}
+
+.section__banner__content {
+    padding: 2em 0em;
+    
+}
+
+.section__banner__content > div > h3 {
+    margin-top: 0;
+    font-size: 1em;
+}
+
+.section__banner__content > div > p {
+    font-size: .8em;
+    padding-right: 14.8em;
+    margin-top: 5px;
+
+    line-height: 22px;
+}
+
+.section__banner__content > div:first-child {
+    margin-top: 20px;
+}
+
+.section__banner__content > div:nth-child(2) {
+    margin: 35px 0;
+}
+
+#section__devices {
+    padding: 0 16vw;
+    margin: 5em 0;
+}
+
+#section__devices > h2 {
+    font-size: 1.9em;
+}
+
+#section__devices > p {
+    margin-bottom: 5em;
+    padding: 0 4.2em;
+}
+
+#section__cards {
+    align-items: center;
+
+    padding: 0 6.5em;
+    margin-bottom: 5em;
+}
+
+#section__cards > h2 {
+    font-size: 1.9em;
+    margin-top: 0;
+}
+
+.container__card {
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.card {
+    width: 30%;
+}
+
+.card:nth-of-type(2) {
+    margin: 0 25px;
+}
+
+.card > div {
+    height: 40px;
+    justify-content: center;
+}
+
+.card > div > img {
+    margin: auto 0;
+}
+
+.card > h3 {
+    font-size: 1.1em;
+}
+
+.card > p {
+    font-size: .75em;
+    line-height: 25px;
+}
+
+#section__logos {
+    padding: 0 7em;
+    margin-bottom: 7em;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+#section__logos > div > img {
+    width: 85%;
+}
+
+#section__download {
+    align-items: center;
+    padding: 0 14em;
+
+    margin-bottom: 7em;
+}
+
+#section__download > h2 {
+    font-size: 1.7em;
+    margin-top: 0;
+}
+
+#section__download > p {
+    margin-bottom: 2em;
+}
+
+footer {
+    align-items: center;
+    
+    background-color: #F4F6F8;
+    padding: .5em 7em;
+}
+
+footer > img {
+    width: 40px;
+    height: 40px;
+}
+
+.container__social__medias {
+    margin-left: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: var(--dark-Grayish-Blue);
+    text-decoration: none;
+
+}
+
+.container__options > ul {
+    columns: 3;
+    margin-left: 60px;
+}
+
+.container__options > ul li {
+    margin-bottom: 15px;
+    margin-right: 35px;
+}
+
+.container__options > ul > li > a {
+    font-size: 1em;
+}
+
+.container__options > ul > li > a:hover,
+.container__social__medias > ul > li > a:hover {
+    color: var(--strong-Cyan);
+}
+
+.container__social__medias > ul li {
+    float: left;
+}
+
+.container__social__medias > ul > li:nth-child(2) {
+    margin: 0 15px;
+}
+
+@media ( width >= 1400px ) {
+    footer,
+    header {
+        padding-left: calc(( 100% - 1200px ) / 2);
+        padding-right: calc(( 100% - 1200px ) / 2);
+    }
+}
+
+@media ( width < 1002px ){
+    .container__options > ul,
+    .container__social__medias > ul {
+        padding: 0;
+    }
+}
+
+@media ( width < 928px ){
+    header {
+        background-image: url('../images/bg-header-mobile.png');
+        background-size: cover;
+        padding:  4em 7vw;
+    }
+    
+    #section__snippets,
+    #section__banner,
+    #section__devices,
+    #section__cards,
+    #section__logos,
+    #section__download {
+        padding: 0 7vw;
+    }
+
+    footer {
+        padding: 3em 7vw;
+    }
+
+    .section__banner__content > div > p {
+        padding-right: 30%;
+    }
+
+    .container__options > ul {
+        columns: 2;
+    }
+}
+
+@media ( width <= 768px ){
+    header > h2,
+    #section__snippets > h3,
+    #section__devices > h2,
+    #section__cards > h2 {
+        font-size: 1.8em;
+
+    }
+
+    header > p,
+    #section__snippets > p,
+    .section__banner__content > div > p,
+    #section__devices > p,
+    #section__cards > p,
+    #section__cards > p,
+    .card > p,
+    #section__download > p {
+        font-size: .93em;
+    }
+    
+    #section__banner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner > img {
+        translate: 0;
+    }
+
+    .section__banner__content > div {
+        text-align: center;
+    }
+
+    .section__banner__content > div > h3 {
+        font-size: 1.4em;
+        margin-bottom: .5em;
+    }
+
+    .section__banner__content > div > p {
+        padding-right: 0;
+    }
+
+    .container__card {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 40px;
+
+        margin-top: 6em;
+    }
+
+    .card {
+        width: 60%;
+    }
+
+    .card > h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media ( width < 582px ) {
+    .container__options > ul {
+        margin-left: 40px;
+    }
+
+    .container__options > ul > li {
+        margin: 0 0 1em 0;
+    }
+
+    #section__logos {
+        flex-direction: column;
+        row-gap: 3.5em;
+
+        margin-bottom: 9em;
+    }
+
+    #section__logos > div > img {
+        width: 100%;
+    }
+
+}
+
+@media ( width < 493px ){
+    .header__options > button,
+    .section__download__options button {
+        width: 100%;
+    }
+
+    .header__options > button:first-child,
+    .section__download__options button:first-child {
+        margin-bottom: 1.5em;
+        margin-right: 0;
+    }
+
+    #section__banner > div:first-child,
+    #section__banner > div:last-child {
+        width: 100%;
+    }
+
+    #section__cards {
+        text-align: center;
+    }
+
+    #section__cards > p {
+        line-height: 30px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .container__options > ul {
+        columns: 1;
+    }
+}
+
+@media ( width <= 375px ) {
+    header > h2 {
+        margin-top: 2em;
+    }
+
+    #section__devices > p {
+        padding: 0;
+        margin-bottom: 4em;
+    }
+
+    #section__download {
+        margin-bottom: 10em;
+    }
+
+    #section__download > p {
+        font-size: .94em;
+        margin-bottom: 4em;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer > img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .container__options > ul,
+    .container__social__medias > ul {
+        margin-left: 0;
+    }
+
+    .container__options > ul > li {
+        margin: 2em 0;
+        text-align: center;
+    }
+
+    .container__social__medias {
+        margin-right: auto;
+    }
+
+    .container__social__medias > ul > li:nth-child(2) {
+        margin: 0 2em;
+    }
+
+    .container__social__medias > ul > li > a {
+        font-size: 1.7em;
+    }
+}
