@@ -1,0 +1,629 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Raleway:wght@400;700&display=swap');
+
+/* ----- Variables ----- */
+:root {
+    /** Colores */
+    /** Primario */
+    --very-Blue: hsl(243, 87%, 12%);
+    --desaturated-Blue: hsl(238, 22%, 44%);
+    --white: #fff;
+
+    /** Accent */
+    --bright-Blue: hsl(224, 93%, 58%);
+    --moderate-Cyan: hsl(170, 45%, 43%);
+
+    /** Neutral */
+    --light-Grayish-Blue: hsl(240, 75%, 98%);
+    --light-Gray: hsl(0, 0%, 75%);
+
+    /** Font  */
+    --open-sans-font: "Open Sans", sans-serif;
+    --raleway-font: "Raleway", sans-serif;
+    --size: 16px
+}
+
+body {
+    font-family: var(--open-sans-font);
+    font-size: var(--size);
+
+    background-image: url('../images/bg-curve-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: auto 187vh;
+    background-position: bottom;
+}
+
+header,
+section,
+footer {
+    padding: 0 5vw;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+}
+
+input::placeholder {
+    color: var(--light-Gray);
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+/*! DISPLAY FLEXBOX */
+nav,
+.content,
+.content__text,
+.user {
+    display: flex;
+}
+
+/*! GRID COLUMNS 2 */
+
+/*! FONTS  */
+nav ul li a,
+.content__text h2,
+.content__card h2 {
+    font-family: var(--raleway-font);
+}
+
+/*! TRANSITIONS  */
+#section__form form button {
+    transition: background-color .4s;
+}
+
+/*! HOVERS  */
+nav ul li a:hover {
+    color: var(--bright-Blue);
+    text-decoration: underline;
+}
+
+#section__form form button:hover {
+    background-color: hsla(224, 93%, 58%, .6);
+}
+
+header,
+#section__content {
+    margin-bottom: 6em;
+}
+
+nav {
+    justify-content: space-between;
+
+    margin-top: 3em;
+    margin-bottom: 6em;
+
+}
+
+nav img {
+    margin: auto 0;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li:nth-of-type(2){
+    margin: 0 3em;
+}
+
+nav ul li a {
+    color: var(--very-Blue);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.content__text {
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content__text h2 {
+    justify-items: center;
+    margin-top: 0;
+
+    font-size: 2.24em;
+}
+
+.content__text p {
+    line-height: 25px;
+}
+
+.content__text form input {
+    width: 250px;
+    padding: 9px 15px;
+    margin-right: 5px;
+    font-size: .8em;
+    outline: none;
+
+    border: 1px solid var(--very-Blue);
+    border-radius: 5px;
+}
+
+.content__text form input::placeholder {
+    color: var(--desaturated-Blue);
+}
+
+.content__text form button {
+    width: 180px;
+    background-color: var(--bright-Blue);
+    color: var(--light-Grayish-Blue);
+    border-radius: 5px;
+    font-size: .8em;
+
+    padding: 11px 20px;
+
+    box-shadow: 0px 5px 5px hsla(224, 93%, 58%, .2);
+}
+
+.content__img {
+    display: flex;
+}
+
+.content__img img {
+    width: 100%;
+    margin: auto 0;
+}
+
+#section__content {
+    display: grid;
+    grid-template-columns: 62% 38%;
+    background-color: transparent;
+}
+
+.content__card h2 {
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+.content__card > p {
+    width: 80%;
+    line-height: 25px;
+}
+
+.content__card a {
+    color: var(--moderate-Cyan);
+    border-bottom: 1.5px solid var(--moderate-Cyan);
+    display: flex;
+    column-gap: 5px;
+
+    width: 167px;
+}
+
+.content__card a img {
+    margin: auto 0;
+}
+
+.card {
+    background-color: var(--white);
+    width: 290px;
+
+    padding: 2em;
+    margin-top: 2.5em;
+    border-radius: 5px;
+    box-shadow: 0 0 15px  hsla(238, 22%, 44%, .1);
+}
+
+.card p {
+    margin-top: 10px;
+    font-size: .85em;
+    line-height: 20px;
+}
+
+.user {
+    column-gap: 10px;
+}
+
+.user img {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+}
+
+.user__info h3 {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-family: var(--raleway-font);
+    font-size: .7em;
+}
+
+.user__info small {
+    font-size: .5em;
+}
+
+#section__form {
+    background-color: var(--desaturated-Blue);
+    display: grid;
+    grid-template-columns: 1fr 35.7%;
+    column-gap: 6em;
+
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+#section__form div h2 {
+    margin-top: 0;
+    font-size: 1.9em;
+    font-family: var(--raleway-font);
+}
+
+#section__form div h2,
+#section__form div p {
+    color: var(--light-Grayish-Blue);
+    width: 85%;
+    line-height: 25px;
+}
+
+#section__form form input{
+    display: block;
+    width: 85%;
+    margin-bottom: 15px;
+    font-size: .7em;
+
+    padding: 12px 20px;
+    border: none;
+}
+
+#section__form form button {
+    background-color: var(--bright-Blue);
+    color: var(--light-Grayish-Blue);
+    font-family: var(--raleway-font);
+    font-weight: 700;
+    font-size: .75em;
+
+    padding: 15px 25px;
+}
+
+#section__form form input,
+#section__form form button {
+    border-radius: 2px;
+}
+
+footer {
+    background-color: var(--very-Blue);
+    padding-top: 5em;
+    padding-bottom: 3em;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 20%;
+    grid-template-areas: 
+    "a a a"
+    "b c d"
+    ;
+
+    column-gap: 3em;
+}
+
+footer a {
+    color: var(--light-Grayish-Blue);
+}
+
+footer ul {
+    padding: 0;
+}
+
+.footer__logo {
+    grid-area: a;
+}
+
+.footer__contacts {
+    grid-area: b;
+}
+
+.footer__contacts a {
+    display: flex;
+    column-gap: 15px;
+}
+
+.footer__contacts ul li,
+.footer__options ul li {
+    margin-bottom: 15px;
+}
+
+.footer__options {
+    grid-area: c;
+}
+
+.footer__options ul {
+    columns: 2;
+}
+
+.footer__social__medias {
+    grid-area: d;
+}
+
+.footer__social__medias li {
+    float: left;
+}
+
+.footer__social__medias li:nth-of-type(2) {
+    margin: 0 10px;
+}
+
+.footer__social__medias a {
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--light-Grayish-Blue);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__social__medias i {
+    font-size: .8em;
+}
+
+.input__error {
+    border: 1px solid red !important;
+    color: red;
+}
+
+.input__success {
+    border: 1px solid green !important;
+}
+
+.message {
+    font-size: .7em;
+    margin: 0;
+}
+
+.error {
+    color: red !important;
+}
+
+.success {
+    color: green !important;
+}
+
+@media ( width > 1200px ){
+    body {
+        background-size: auto 140vh;
+    }
+    
+    section {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    header,
+    #section__form,
+    footer {
+        padding-left: calc((100% - 1200px) /2);
+        padding-right: calc((100% - 1200px) /2);
+    }
+}
+
+@media ( width < 992px ){
+    body {
+        background-image: url('../images/bg-curve-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: auto 190vh;
+        background-position: bottom;
+    }
+
+    .content__text form button {
+        margin-top: 10px;
+    }
+}
+@media ( width <= 768px ){
+    body {
+        background-size: auto 200vh;
+    }
+}
+@media ( width <= 576px ){
+    header,
+    section,
+    footer {
+        padding: 0 7vw;
+    }
+
+    .content__text form input,
+    .content__text form button,
+    .content__card > p,
+    #section__form div p,
+    #section__form form input,
+    #section__form form button {
+        width: 100%;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .content__text {
+        text-align: center;
+        width: 100%;
+    }
+
+    .content__text h2 {
+        font-size: 1.6em;
+        line-height: 40px;
+    }
+
+    .content__text form input,
+    #section__form form input {
+        padding: 9px 0px;
+        margin-right: 0px;
+        margin-bottom: 15px;
+        text-indent: 25px;
+    }
+
+    .content__text,
+    .content__card {
+        order: 1;
+    }
+
+    #section__content {
+        grid-template-columns: 1fr;
+    }
+
+    .content__card h2 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .content__img {
+        order: 0;
+        margin-bottom: 3em;
+    }
+    
+    #section__form {
+        grid-template-columns: 1fr;
+        text-align: center;
+
+        row-gap: 20px;
+    }
+
+    #section__form div h2 {
+        margin: 0 auto;
+    }
+    
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "a a"
+            "b c"
+            "d d"
+        ;
+
+        row-gap: 1em;
+        column-gap: 0;
+
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
+
+    .footer__social__medias  {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media ( width <= 375px ){
+    header {
+        margin-bottom: 10em;
+    }
+    
+    nav {
+        margin-top: 1em;
+    }
+    
+    nav img {
+        width: 80px;
+    }
+
+    nav ul li:nth-of-type(2) {
+        margin: 0 1em;
+    }
+
+    nav a {
+        font-size: .8em;
+    }
+
+    .content__text h2 {
+        font-size: 1.6em;
+        line-height: 40px;
+    }
+
+    .content__text p {
+        font-size: .9em;
+    }
+
+    .content__img {
+        margin-bottom: 3em;
+    }
+
+    .content__text form input,
+    .content__text form button,
+    .content__card > p {
+        width: 100%;
+    }
+
+    .content__text form button {
+        margin-top: 0;
+    }
+
+    .content__card > p {
+        font-size: .86em;
+    }
+
+    .content__card a {
+        margin: 3em auto;
+    }
+
+    .card {
+        width: 68%;
+        margin: 0 auto;
+        padding: 1.5em 1.7em;
+    }
+
+    .card p {
+        font-size: .62em;
+        margin-top: 5px;
+        line-height: 15px;
+    }
+
+    #section__form div h2 {
+        font-size: 1.2em;
+    }
+
+    #section__form form input {
+        text-indent: 10px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "a"
+            "b"
+            "c"
+            "d"
+        ;
+
+        row-gap: 2em;
+
+        padding-top: 3em;
+        padding-bottom: 3em;
+    }
+
+    .footer__options ul {
+        columns: 1;
+    }
+
+    .footer__options li:nth-of-type(4) {
+        margin-bottom: 4em;
+    }
+}

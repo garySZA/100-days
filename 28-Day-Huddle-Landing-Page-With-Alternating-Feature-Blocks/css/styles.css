@@ -504,6 +504,10 @@ a {
         width: 100%;
     }
     
+    .modal {
+        padding: 2em 1.1em;
+    }
+
     footer {
         column-gap: 4em;
     }
@@ -533,10 +537,6 @@ a {
     .card__text p {
         font-size: .75em;
         line-height: 23px;
-    }
-
-    .modal {
-        padding: 2em 1.1em;
     }
 
     .modal h3 {
