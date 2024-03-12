@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nombre del autor">
+    <meta name="description" content="Descripcion del proyecto">
+    <!-- Biblioteca de íconos Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Archivo reset Normalize -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <title>Newsletter Sign-Up Form With Success Message</title>
+</head>
+
+<body>
+
+    <!-- Marcado HTML -->
+    <section>
+        <div class="container" >
+            <div class="container__form">
+                <h2>Stay updated!</h2>
+                <p>
+                    Join 60,000+ product managers receiving monthly updates on:
+                </p>
+                <ul>
+                    <li><img src="./images/icon-list.svg" alt="icon list">Product discovery and building what matters</li>
+                    <li><img src="./images/icon-list.svg" alt="icon list">Measuring to ensure updates are a success</li>
+                    <li><img src="./images/icon-list.svg" alt="icon list">And much more!</li>
+                </ul>
+                <form id="form" novalidate> 
+                    <div class="container__input">
+                        <div>
+                            <label for="email"><b>Email address</b></label>
+                            <small id="message__error">Valid email required</small>
+                        </div>
+                        <input type="email" name="email" id="email" placeholder="email@company.com">
+                    </div>
+                    <button type="submit">Subscribe to monthly newsletter</button>
+                </form>
+            </div>
+            <div class="container__img"></div>
+        </div>
+        <div class="card__success">
+            <img src="./images/icon-success.svg" alt="icon success">
+            <h3>Thanks for subscribing!</h3>
+            <p>A confirmation email has been sent to <b>ash@loremcompany.com</b>. Please open it and click the button inside to confirm your subscription.</p>
+            <button>Dismiss message</button>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

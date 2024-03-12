@@ -1,0 +1,272 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+    /** Paleta de colores */
+    --tomato: hsl(4, 100%, 67%);
+    --dark-Slate-Grey: hsl(234, 29%, 20%);
+    --charcoal-Grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+
+    /** Font */
+    --roboto-font: "Roboto", sans-serif;
+    --size: 16px;
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+/*! HOVERS  */
+button:hover {
+    background: linear-gradient(90deg, #FF5377, #FB693C );
+}
+
+input:hover,
+button:hover {
+    cursor: pointer;
+}
+
+body {
+    font-family: var(--roboto-font);
+    font-size: var(--size);
+
+    background-color: var(--dark-Slate-Grey);
+}
+
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.container {
+    width: 800px;
+    background-color: var(--white);
+    border-radius: 25px;
+    padding: 1em;
+
+    display: grid;
+    grid-template-columns: 56% 44%;
+    column-gap: 16px;
+}
+
+.container__form {
+    padding: 3em 2.5em;
+}
+
+.container__form h2 {
+    font-size: 3.5em;
+    margin: 0;
+}
+
+.container__form p {
+    margin: 1em 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    margin-bottom: 2em;
+}
+
+li {
+    display: flex;
+}
+
+li:nth-child(2) {
+    margin: 15px 0;
+}
+
+li img {
+    margin-right: 15px;
+}
+
+.container__input div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.container__input label {
+    font-size: .75em;
+}
+
+.container__input input {
+    width: calc(100% - 42px);
+    padding: 13.7px 20px;
+    border: 1px solid var(--grey);
+    margin-bottom: 1.3em;
+    border-radius: 8px;
+}
+
+input:focus {
+    outline: none;
+}
+
+form button {
+    width: 100%;
+    background-color: var(--dark-Slate-Grey);
+    border: none;
+    color: var(--white);
+    padding: 15px 0;
+    border-radius: 8px;
+}
+
+.input__error {
+    border: 1px solid red !important;
+    background-color: hsla(4, 100%, 67%, .2);
+    color: red;
+}
+
+#message__error {
+    color: red;
+    display: none;
+}
+
+#message__success {
+    margin-top: 5px;
+    font-size: .8em;
+    color: green;
+    display: none;
+    height: 30px;
+    width: 100%;
+}
+
+.show {
+    display: inline !important;
+}
+
+.container__img {
+    background-image: url('../images/illustration-sign-up-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.card__success {
+    width: 380px;
+    background-color: var(--white);
+    border-radius: 25px;
+    padding: 3em;
+    display: none;
+    opacity: 0;
+
+    transition: opacity 1s ease;
+}
+
+.card__success.visible{
+    display: block;
+    opacity: 1;
+}
+
+.card__success h3 {
+    font-size: 3.5em;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.card__success p {
+    margin-top: 1.5em;
+    margin-bottom: 2.5em;
+}
+
+.card__success button {
+    width: 100%;
+    padding: 15px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--dark-Slate-Grey);
+    color: white;
+}
+
+@media ( width <= 768px ){
+    section {
+        padding: 3em 20vw;
+    }
+    
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 30% 70%;
+        row-gap: 2em;
+    }
+
+    .container__img {
+        order: 0;
+        background-image: url('../images/illustration-sign-up-mobile.svg');
+        background-size: cover;
+        border-radius: 25px;
+        height: 330px;
+    }
+
+    .container__form {
+        order: 1;
+        padding: 3em 7vw;
+    }
+
+    .container__form h2,
+    .card__success h3 {
+        font-size: 2.5em;
+    }
+}
+
+@media ( width <=575px ){
+    section {
+        padding: 3em 7vw;
+    }
+}
+
+
+
+@media ( width <=375px ){
+    section {
+        align-items: start;
+        padding: 0;
+    }
+
+    .container {
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .container__form {
+        padding: 3em 7vw;
+    }
+
+    .container__img {
+        height: 290px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .card__success {
+        padding: 3em 7vw;
+        border-radius: 0;
+        height: 100vh;
+    }
+
+    .card__success h3 {
+        margin: .7em 0;
+    }
+
+    .card__success button {
+        margin-top: 14em
+    }
+}
