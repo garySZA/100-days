@@ -1,0 +1,269 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 11
+2. Variables ............. 17
+3. Estilos generales ..... 32
+-------------------- 
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+    /** Paleta de colores */
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+
+    /** FONTS  */
+    --poppins-font: "Poppins", sans-serif;
+}
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+body {
+    background-color: var(--off-white);
+    font-family: var(--poppins-font);
+}
+
+input {
+    font-size: 32px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type=number] {
+    appearance: textfield;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+.card {
+    background-color: var(--white);
+    padding: 3em;
+    border-radius: 25px;
+    border-bottom-right-radius: 150px;
+}
+
+.card__container__form {
+    margin-bottom: 2em.5;
+}
+
+form {
+    display: flex;
+    column-gap: 20px;
+}
+
+.container__input {
+    display: flex;
+    flex-direction: column;
+
+    height: 140px;
+}
+
+.container__input label {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--smokey-grey);
+    letter-spacing: 2px;
+}
+
+.container__input input {
+    width: 100px;
+    border-radius: 8px;
+    border: 1px solid var(--light-grey);
+    padding: 10px 25px;
+
+    margin: 8px 0;
+}
+
+.container__input input:hover {
+    cursor: pointer;
+    border: 1px solid var(--purple);
+}
+
+form small {
+    color: red;
+    font-weight: 400;
+    font-style: italic;
+    display: none;
+}
+
+.show__small {
+    display: inline;
+}
+
+.label__error {
+    color: red !important;
+}
+
+.input__error {
+    border: 1px solid red !important;
+}
+
+form button {
+    background-color: var(--purple);
+    border: none;
+    padding: 20px;
+    border-radius: 50%;
+    transform: translateY(6.5em);
+    margin-left: 70px;
+
+    transition: background-color .4s ease-in-out;
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: var(--off-black);
+}
+
+.card__container__form hr{
+    border: none;
+    border-top: .5px solid var(--light-grey);
+    margin-bottom: 3em;
+}
+
+.card h3 {
+    font-size: 5.7em;
+    margin: 0;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.card h3 span{
+    color: var(--purple);
+}
+
+@media ( width <= 768px ) {
+    section {
+        padding: 0 7vw;
+    }
+    .card {
+        padding: 3em 2em;
+    }
+
+}
+
+@media ( width <= 575px ) {
+
+
+    form {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 20px;
+        grid-template-areas: 
+            'a b c'
+            '. d .'
+        ;
+    }
+
+    .container__input:nth-of-type(1) {
+        grid-area: a;
+    }
+    
+    .container__input:nth-of-type(2) {
+        grid-area: b;
+        
+    }
+    
+    .container__input:nth-of-type(3) {
+        grid-area: c;
+    }
+
+    .container__btn {
+        grid-area: d;
+        text-align: center;
+    }
+
+    input {
+        font-size: 1.5em;
+    }
+
+    .container__input input {
+        width: 60px;
+        
+    }
+
+    form button {
+        margin-left: 0;
+        transform: translateY(0em);
+        padding: 15px;
+    }
+
+    .container__btn button img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .card__container__form hr {
+        margin-bottom: 4em;
+    }
+
+    .card h3 {
+        font-size: 4.5em;
+    }
+}
+
+@media ( width <= 437px ) {
+    .card {
+        padding: 3em 1.5em;
+        border-bottom-right-radius: 100px;
+    }
+
+    .container__input {
+        height: 100px;
+    }
+
+    .container__input label {
+        font-size: .8em;
+    }
+
+    input {
+        font-size: 1em;
+    }
+    
+    .container__input input {
+        width: 50px;
+        padding: 10px 15px;
+    }
+    .card h3 {
+        font-size: 3em;
+    }
+}
+
+@media ( width <= 375px ) {
+
+
+
+    small {
+        font-size: .6em;
+    }
+
+
+    form button {
+        transform: translateY(0em);
+
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 3.1em;
+    }
+}
