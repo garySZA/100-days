@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Nombre del autor">
+    <meta name="description" content="Descripcion del proyecto">
+    <!-- Biblioteca de íconos Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Archivo reset Normalize -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <title>News Homepage</title>
+</head>
+
+<body>
+
+    <!-- Marcado HTML -->
+    <header>
+        <nav>
+            <section class="container nav">
+                <div class="logo">
+                    <img src="./images/logo.svg" alt="logo">
+                </div>
+                <div class="links-header">
+                    <div class="container__menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">New</a></li>
+                            <li><a href="#">Popular</a></li>
+                            <li><a href="#">Trending</a></li>
+                            <li><a href="#">Categories</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hamburguer">
+                    <i id='icon-menu' class="fa-solid fa-bars"></i>
+                </div>
+            </section>
+        </nav>
+
+        <section class="container__content">
+            <article class="banner"></article>
+            <article class="title">
+                <h2>The Bright Future of Web 3.0?</h2>
+            </article>
+            <article class="read__more">
+                <p>We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?</p>
+                <a href="#">READ MORE</a>
+            </article>
+            <article class="news">
+                <h2>New</h2>
+                <h3><a href="#">Hydrogen VS Electric Cars</a></h3>
+                <p>Will hydrogen-fueled cars ever catch up to EVs?</p>
+                <hr>
+                <h3><a href="#">The Downsides of AI Artistry</a></h3>
+                <p>What are the possible adverse effects of on-demand AI image generation?</p>
+                <hr>
+                <h3><a href="#">Is VC Funding Drying Up?</a></h3>
+                <p>Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+            </article>
+            <article class="card card__one">
+                <div class="banner__card">
+                    <img src="./images/image-retro-pcs.jpg" alt="iamge retro pc's">
+                </div>
+                <div class="card__content">
+                    <small>01</small>
+                    <h4><a href="#">Reviving Retro PCs</a></h4>
+                    <p>What happens when old PCs are given modern upgrades?</p>
+                </div>
+            </article>
+            <article class="card card__two">
+                <div class="banner__card">
+                    <img src="./images/image-top-laptops.jpg" alt="image top 10 laptops">
+                </div>
+                <div class="card__content">
+                    <small>02</small>
+                    <h4><a href="#">Top 10 Laptops of 2022</a></h4>
+                    <p>Our best picks for various needs and budgets.</p>
+                </div>
+            </article>
+            <article class="card card__three">
+                <div class="banner__card">
+                    <img src="./images/image-gaming-growth.jpg" alt="image-gaming-growth">
+                </div>
+                <div class="card__content">
+                    <small>03</small>
+                    <h4><a href="#">The Growth of Gaming</a></h4>
+                    <p>How the pandemic has sparked fresh opportunities.</p>
+                </div>
+            </article>
+        </section>
+    </header>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
